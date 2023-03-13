@@ -1,16 +1,15 @@
 
-create proc registros_citas
+create proc sp_registro_cita
 (
 @nombre varchar(50),
-@dia varchar (50),
-@hora varchar (50)
+@fecha varchar(50)
 )
 as
 begin
 
-insert into Citas(Nombre,Dia,Hora)
-values (@nombre,@dia,@hora)
+insert into cita
+values (@nombre,@fecha)
 
 end
 
-exec registros_citas 'esteban','sabado','8am'
+exec sp_registros_cita 'esteban','10-10-10'
